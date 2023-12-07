@@ -14,7 +14,7 @@ def test_display_catalog(capsys, library_system):
     assert "Available Books Catalog" in captured.out
 
 def test_checkout_books(capsys, monkeypatch, library_system):
-    monkeypatch.setattr('builtins.input', lambda _: '001,002\n3\nY\n')
+    monkeypatch.setattr('builtins.input', lambda _: '001,002\n2\n1\nY\n002\n')
     library_system.checkout_books()
     captured = capsys.readouterr()
     assert "Checkout Summary" in captured.out
